@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Benchmark Investment</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="" name="keywords" />
+  <meta content="" name="description" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="img/logo.png" />
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icon Font Stylesheet -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Libraries Stylesheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="lib/animate/animate.min.css" rel="stylesheet" />
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet" />
+
+  <style>
+    /* Enhanced Calculator Styles */
+    .calc-tabs {
+      display: flex;
+      background: #f8f9fa;
+      border-radius: 1rem;
+      padding: 0.25rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e3f3fa;
+    }
+
+    .calc-tab {
+      flex: 1;
+      padding: 0.75rem 1.5rem;
+      text-align: center;
+      background: transparent;
+      border: none;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      color: #6c757d;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .calc-tab.active {
+      background: #44d2f6;
+      color: white;
+      box-shadow: 0 2px 8px rgba(68, 210, 246, 0.3);
+    }
+
+    .calc-content {
+      display: none;
+    }
+
+    .calc-content.active {
+      display: block;
+    }
+
+    .mf-calc-card {
+      border: 1.5px solid #e3f3fa;
+      background: linear-gradient(135deg, #fafdff 0%, #f2faff 100%);
+      box-shadow: 0 8px 32px rgba(68, 210, 246, 0.07);
+      border-radius: 2rem;
+    }
+
+    .chart-toggle {
+      display: flex;
+      background: #f8f9fa;
+      border-radius: 0.5rem;
+      padding: 0.2rem;
+      margin-bottom: 1rem;
+      border: 1px solid #e3f3fa;
+      width: fit-content;
+      margin: 0 auto 1rem auto;
+    }
+
+    .chart-toggle-btn {
+      padding: 0.4rem 0.8rem;
+      background: transparent;
+      border: none;
+      border-radius: 0.3rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #6c757d;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .chart-toggle-btn.active {
+      background: #44d2f6;
+      color: white;
+      box-shadow: 0 1px 4px rgba(68, 210, 246, 0.3);
+    }
+
+    @media (min-width: 992px) {
+      .border-end-lg {
+        border-right: 1.5px solid #e3f3fa !important;
+      }
+    }
+
+    .calc-form input[type="range"] {
+      accent-color: #44d2f6;
+      height: 2px;
+    }
+
+    .calc-form input[type="number"] {
+      border-radius: 1rem;
+      font-weight: 500;
+      text-align: center;
+      border: 1px solid #d1eaff;
+      background: #fafdff;
+      box-shadow: none;
+      transition: border-color 0.2s;
+    }
+
+    .calc-form input[type="number"]:focus {
+      border-color: #44d2f6;
+      outline: none;
+    }
+
+    .calc-form label {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .calc-form .form-range {
+      width: 100%;
+    }
+
+    .calc-chart {
+      max-width: 350px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(68, 210, 246, 0.05);
+      padding: 1rem;
+    }
+
+    @media (max-width: 991px) {
+      .border-end-lg {
+        border-right: none !important;
+        border-bottom: 1.5px solid #e3f3fa !important;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+      }
+    }
+
+    .font-size {
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Spinner Start -->
+  <div id="spinner"
+    class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+  <!-- Spinner End -->
+
+  <!-- Topbar Start -->
+  <div class="container-fluid topbar px-0 d-none d-lg-block">
+    <div class="container px-0">
+      <div class="row gx-0 align-items-center" style="height: 45px">
+        <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+          <div class="d-flex flex-wrap">
+            <a href="https://share.google/SbHIWO7VvFAIQz3Ul" class="text-muted me-4"><i
+                class="fas fa-map-marker-alt text-primary me-2"></i>Find A
+              Location</a>
+            <a href="#" class="text-muted me-4"><i class="fas fa-phone-alt text-primary me-2"></i>+91
+              9974455832</a>
+            <a href="#" class="text-muted me-0"><i
+                class="fas fa-envelope text-primary me-2"></i>benchmarkinvestment1@gmail.com</a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          <div class="d-flex align-items-center justify-content-end">
+            <a href="https://www.facebook.com/share/1BBjLkt6P2/"
+              class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i
+                class="fab fa-facebook-f text-white"></i></a>
+            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i
+                class="fab fa-twitter text-white"></i></a>
+            <a href="https://www.instagram.com/benchmark_investment_?igsh=NWQ2MzR6Y2lybmNi"
+              class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i
+                class="fab fa-instagram text-white"></i></a>
+            <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-0"><i
+                class="fab fa-linkedin-in text-white"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Topbar End -->
+
+  <!-- Navbar & Hero Start -->
+  <div class="container-fluid sticky-top px-0">
+    <div class="position-absolute bg-dark" style="left: 0; top: 0; width: 100%; height: 100%"></div>
+    <div class="container px-0">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3 px-4">
+        <a href="index.html" class="navbar-brand p-0 d-flex align-items-center">
+          <img src="img/logo.png" alt="Investa Logo" class="navbar-logo"
+            style="height: 44px; width: auto; display: block" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto py-0">
+            <a href="index.html" class="nav-item nav-link mt-3 mt-lg-0 mb-2 mb-lg-0 me-lg-3">Home</a>
+            <a href="about.html" class="nav-item nav-link mb-2 mb-lg-0 me-lg-3">About Us</a>
+            <div class="nav-item dropdown mb-2 mb-lg-0 me-lg-3">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offerings</a>
+              <div class="dropdown-menu m-0">
+                <a href="mutualfund.html" class="dropdown-item"><span class="float-start"><i
+                      class="fas fa-angle-right"></i></span> Mutual Fund</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown mb-2 mb-lg-0 me-lg-3">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+              <div class="dropdown-menu m-0">
+                <a href="imageGallery.html" class="dropdown-item"><span class="float-start"><i
+                      class="fas fa-angle-right"></i></span> Image Gallery</a>
+                <a href="testimonial.html" class="dropdown-item"><span class="float-start"><i
+                      class="fas fa-angle-right"></i></span> Client Testimonials</a>
+                <a href="importantLinks.html" class="dropdown-item"><span class="float-start"><i
+                      class="fas fa-angle-right"></i></span> Important Links</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown active mb-2 mb-lg-0 me-lg-3">
+              <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Tools</a>
+              <div class="dropdown-menu m-0">
+                <a href="MFCalc.html" class="dropdown-item active"><span class="float-start"><i
+                      class="fas fa-angle-right"></i></span> MF Calculator</a>
+                <a href="goal-calculator.html" class="dropdown-item"><span class="float-start"><i
+                      class="fas fa-angle-right"></i></span> Goal Calculator</a>
+                <a href="SWPCalc.html" class="dropdown-item"><span class="float-start"><i
+                      class="fas fa-angle-right"></i></span> SWP Calculator</a>
+                <a href="ReverseEMICalc.html" class="dropdown-item"><span class="float-start"><i
+                      class="fas fa-angle-right"></i></span> Reverse EMI Calculator</a>
+              </div>
+            </div>
+            <div class="nav-item dropdown mb-2 mb-lg-0 me-lg-3">
+              <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login</a>
+              <div class="dropdown-menu m-0">
+                <a href="https://benchmarkinvestment.madosx.co.in/pages/auth/login" class="dropdown-item">
+                  <span class="float-start"><i class="fas fa-angle-right"></i></span> Client Desk
+                </a>
+                <a href="https://benchmarkinvestment.madosx.co.in/pages/auth/login" class="dropdown-item">
+                  <span class="float-start"><i class="fas fa-angle-right"></i></span> Admin Desk
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center flex-nowrap pt-xl-0">
+            <a href="contact.html"
+              class="btn btn-primary rounded-pill text-white py-2 px-4 ms-2 flex-wrap flex-sm-shrink-0">Contact
+              Us</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+  <!-- Navbar & Hero End -->
+
+  <!-- Header Start -->
+  <div class="container-fluid bg-breadcrumb">
+    <div class="bg-breadcrumb-single"></div>
+    <div class="container text-center py-5" style="max-width: 900px">
+      <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">
+        MF Calculator
+      </h4>
+      <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="#">Tools</a></li>
+        <li class="breadcrumb-item active text-primary">MF Calculator</li>
+      </ol>
+    </div>
+  </div>
+  <!-- Header End -->
+
+  <!-- MF Calc Start -->
+  <section class="container py-5" style="max-width: 1200px">
+    <div class="mf-calc-card bg-white rounded-4 shadow-lg p-4 p-md-5 mb-4">
+      <!-- Calculator Tabs -->
+      <div class="calc-tabs">
+        <button class="calc-tab active" onclick="switchTab('sip')">
+          <i class="fas fa-chart-line me-2"></i>SIP Calculator
+        </button>
+        <button class="calc-tab" onclick="switchTab('lumpsum')">
+          <i class="fas fa-coins me-2"></i>Lumpsum Calculator
+        </button>
+      </div>
+
+      <!-- SIP Calculator -->
+      <div id="sip-calc" class="calc-content active">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-5 border-end-lg">
+            <h2 class="mb-4 text-primary fw-bold">
+              <i class="fas fa-calculator me-2"></i> SIP Calculator
+            </h2>
+            <form class="calc-form">
+              <div class="mb-4">
+                <label for="sip-amount" class="form-label fw-semibold">Monthly Investment
+                  <span class="text-primary">(₹)</span></label>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="range" class="form-range flex-grow-1" min="500" max="100000" step="1" id="sip-amount"
+                    value="5000" />
+                  <input type="number" class="form-control ms-2" id="sipAmountOut" value="5000" min="500" max="100000"
+                    step="1" style="width: 110px" />
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="sip-rate" class="form-label fw-semibold">Expected Annual Return
+                  <span class="text-primary">(%)</span></label>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="range" class="form-range flex-grow-1" min="1" max="20" step="0.1" id="sip-rate"
+                    value="12" />
+                  <input type="number" class="form-control ms-2" id="sipRateOut" value="12" min="1" max="20" step="0.1"
+                    style="width: 110px" />
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="sip-years" class="form-label fw-semibold">Investment Period
+                  <span class="text-primary">(Years)</span></label>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="range" class="form-range flex-grow-1" min="1" max="40" step="1" id="sip-years"
+                    value="10" />
+                  <input type="number" class="form-control ms-2" id="sipYearsOut" value="10" min="1" max="40" step="1"
+                    style="width: 110px" />
+                </div>
+              </div>
+            </form>
+            <div class="row text-center mt-4">
+              <div class="col-12 col-sm-6 col-md-4 mb-3 mb-md-0">
+                <div class="fw-bold text-secondary small">Total Investment</div>
+                <div class="fs-5 fw-bold" id="sip-total-investment">₹0</div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 mb-3 mb-md-0">
+                <div class="fw-bold text-secondary small">Est. Returns</div>
+                <div class="fs-5 fw-bold text-success" id="sip-total-returns">₹0</div>
+              </div>
+              <div class="col-12 d-flex justify-content-center col-md-4">
+                <div>
+                  <div class="fw-bold text-secondary small">Total Value</div>
+                  <div class="fs-5 fw-bold text-primary" id="sip-total-value">₹0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 mt-5 mt-lg-0">
+            <!-- Chart Toggle -->
+            <div class="chart-toggle">
+              <button class="chart-toggle-btn active" onclick="switchSIPChart('doughnut')">
+                <i class="fas fa-chart-pie me-1"></i>Breakdown
+              </button>
+              <button class="chart-toggle-btn" onclick="switchSIPChart('bar')">
+                <i class="fas fa-chart-bar me-1"></i>Year-wise Growth
+              </button>
+            </div>
+
+            <div class="calc-chart">
+              <canvas id="sipChart" height="300"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lumpsum Calculator -->
+      <div id="lumpsum-calc" class="calc-content">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-5 border-end-lg">
+            <h2 class="mb-4 text-primary fw-bold">
+              <i class="fas fa-calculator me-2"></i> Lumpsum Calculator
+            </h2>
+            <form class="calc-form">
+              <div class="mb-4">
+                <label for="lumpsum-amount" class="form-label fw-semibold">Investment Amount
+                  <span class="text-primary">(₹)</span></label>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="range" class="form-range flex-grow-1" min="1000" max="1000000" step="1000"
+                    id="lumpsum-amount" value="100000" />
+                  <input type="number" class="form-control ms-2" id="lumpsumAmountOut" value="100000" min="1000"
+                    max="1000000" step="1000" style="width: 130px" />
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="lumpsum-rate" class="form-label fw-semibold">Expected Annual Return
+                  <span class="text-primary">(%)</span></label>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="range" class="form-range flex-grow-1" min="1" max="20" step="0.1" id="lumpsum-rate"
+                    value="12" />
+                  <input type="number" class="form-control ms-2" id="lumpsumRateOut" value="12" min="1" max="20"
+                    step="0.1" style="width: 110px" />
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="lumpsum-years" class="form-label fw-semibold">Investment Period
+                  <span class="text-primary">(Years)</span></label>
+                <div class="d-flex align-items-center gap-2">
+                  <input type="range" class="form-range flex-grow-1" min="1" max="40" step="1" id="lumpsum-years"
+                    value="10" />
+                  <input type="number" class="form-control ms-2" id="lumpsumYearsOut" value="10" min="1" max="40"
+                    step="1" style="width: 110px" />
+                </div>
+              </div>
+            </form>
+            <div class="row text-center mt-4">
+              <div class="col-12 col-sm-6 col-md-4 mb-3 mb-md-0">
+                <div class="fw-bold text-secondary small">Total Investment</div>
+                <div class="fs-5 fw-bold" id="lumpsum-total-investment">₹0</div>
+              </div>
+              <div class="col-12 col-sm-6 col-md-4 mb-3 mb-md-0">
+                <div class="fw-bold text-secondary small">Est. Returns</div>
+                <div class="fs-5 fw-bold text-success" id="lumpsum-total-returns">₹0</div>
+              </div>
+              <div class="col-12 d-flex justify-content-center col-md-4">
+                <div>
+                  <div class="fw-bold text-secondary small">Total Value</div>
+                  <div class="fs-5 fw-bold text-primary" id="lumpsum-total-value">₹0</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-7 mt-5 mt-lg-0">
+            <!-- Chart Toggle -->
+            <div class="chart-toggle">
+              <button class="chart-toggle-btn active" onclick="switchLumpsumChart('doughnut')">
+                <i class="fas fa-chart-pie me-1"></i>Breakdown
+              </button>
+              <button class="chart-toggle-btn" onclick="switchLumpsumChart('bar')">
+                <i class="fas fa-chart-bar me-1"></i>Year-wise Growth
+              </button>
+            </div>
+
+            <div class="calc-chart">
+              <canvas id="lumpsumChart" height="300"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- MF Calc End -->
+
+
+
+  <!-- Footer Start -->
+  <div class="container-fluid footer wow fadeIn" data-wow-delay="0.2s" style="background:#132248;">
+    <div class="container py-5">
+      <div class="row gy-5 gx-4 align-items-start justify-content-between">
+        <!-- Logo & Mission -->
+        <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+          <div class="footer-item d-flex flex-column h-100">
+            <img src="img/logo.png" alt="Benchmark Investment Logo"
+              style="height:70px; width:140px; object-fit:contain; margin-bottom:20px;">
+            <p class="mb-0" style="line-height:1.8;">
+              Our mission is to deliver clear, unbiased, and customized financial solutions that help
+              clients build wealth, improve their quality of life, and take actionable steps toward their
+              goals.
+            </p>
+          </div>
+        </div>
+        <!-- Explore -->
+        <div class="col-6 col-md-6 col-lg-2 mb-4 mb-lg-0">
+          <div class="footer-item d-flex flex-column h-100">
+            <h4 class="text-white mb-4">Explore</h4>
+            <ul class="list-unstyled mb-0">
+              <li><a href="index.html" class="footer-link"><i class="fas fa-angle-right me-2"></i>Home</a>
+              </li>
+              <li><a href="about.html" class="footer-link"><i class="fas fa-angle-right me-2"></i>About
+                  Us</a></li>
+              <li><a href="./about.html#team" class="footer-link"><i class="fas fa-angle-right me-2"></i>Our Team</a>
+              </li>
+              <li><a href="imageGallery.html" class="footer-link"><i class="fas fa-angle-right me-2"></i>Image
+                  Gallery</a></li>
+              <li><a href="testimonial.html" class="footer-link"><i class="fas fa-angle-right me-2"></i>Testimonials</a>
+              </li>
+              <li><a href="contact.html" class="footer-link"><i class="fas fa-angle-right me-2"></i>Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Tools -->
+        <div class="col-6 col-md-6 col-lg-2 mb-4 mb-lg-0">
+          <div class="footer-item d-flex flex-column h-100">
+            <h4 class="text-white mb-4">Tools</h4>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <a href="MFCalc.html" class="footer-link">
+                  <i class="fas fa-angle-right me-2"></i>MF Calculator
+                </a>
+              </li>
+              <li>
+                <a href="goal-calculator.html" class="footer-link">
+                  <i class="fas fa-angle-right me-2 align-self-start icon-custom-margin"></i>Goal Calculator
+                </a>
+              </li>
+              <li>
+                <a href="SWPCalc.html" class="footer-link">
+                  <i class="fas fa-angle-right me-2 align-self-start icon-custom-margin"></i>SWP Calculator
+                </a>
+              </li>
+              <li>
+                <a href="ReverseEMICalc.html" class="footer-link">
+                  <i class="fas fa-angle-right me-2 align-self-start icon-custom-margin"></i>Reverse EMI Calculator
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Contact Info -->
+        <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+          <div class="footer-item d-flex flex-column h-100">
+            <h4 class="text-white mb-4">Contact Info</h4>
+            <ul class="list-unstyled mb-3">
+              <li>
+                <div class="footer-icon-row">
+                  <i class="fas fa-map-marker-alt footer-icon align-self-start"></i>
+                  <a href="https://share.google/SbHIWO7VvFAIQz3Ul" target="_blank" class="footer-link">
+                    1st Floor, Krishna Complex, Nr Bank of Baroda, Hirabaug Circle, Surat - 395006
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="footer-icon-row">
+                  <i class="fas fa-envelope footer-icon"></i>
+                  <a href="mailto:benchmarkinvestment1@gmail.com" class="footer-link">
+                    benchmarkinvestment1@gmail.com
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="footer-icon-row">
+                  <i class="fas fa-phone footer-icon"></i>
+                  <a href="tel:9974455832" class="footer-link">
+                    +91 9974455832
+                  </a>
+                </div>
+              </li>
+            </ul>
+
+            <div class="d-flex align-items-center mt-auto flex-wrap">
+              <a class="btn btn-light btn-md-square me-2 mb-2" href="https://www.facebook.com/share/1BBjLkt6P2/"
+                target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a class="btn btn-light btn-md-square me-2 mb-2" href="https://twitter.com/" target="_blank"><i
+                  class="fab fa-twitter"></i></a>
+              <a class="btn btn-light btn-md-square me-2 mb-2"
+                href="https://www.instagram.com/benchmark_investment_?igsh=NWQ2MzR6Y2lybmNi" target="_blank"><i
+                  class="fab fa-instagram"></i></a>
+              <a class="btn btn-light btn-md-square me-0 mb-2" href="https://linkedin.com/" target="_blank"><i
+                  class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- WhatsApp Floating Button Start -->
+  <div class="whatsapp-tooltip-container">
+    <a href="https://wa.me/919974455832?text=Hi%20Benchmark-Investment,%20i%20want%20to%20know%20more%20about%20you"
+      class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <span class="whatsapp-tooltip-text">Chat with us</span>
+  </div>
+  <!-- WhatsApp Floating Button End -->
+
+  <!-- Copyright Start -->
+  <div class="container-fluid copyright py-4">
+    <div class="container">
+      <div class="row g-4 align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-md-0 font-size">
+          <span class="text-body"><a href="#" class="border-bottom text-primary"><i
+                class="fas fa-copyright text-light me-2"></i>2025 Benchmark
+              Investment</a>, All right reserved.</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end text-body font-size">
+          Designed By
+          <a class="border-bottom text-primary" href="https://sudarshansoft.com/">SudarshanSoft Solutions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Copyright End -->
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    // Global variables
+    let sipChart, lumpsumChart;
+    let sipChartType = "doughnut";
+    let lumpsumChartType = "doughnut";
+
+    // Tab switching functionality
+    function switchTab(tabName) {
+      // Hide all calc contents
+      document.querySelectorAll(".calc-content").forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      // Remove active class from all tabs
+      document.querySelectorAll(".calc-tab").forEach((tab) => {
+        tab.classList.remove("active");
+      });
+
+      // Show selected content and activate tab
+      document.getElementById(tabName + "-calc").classList.add("active");
+      event.target.classList.add("active");
+
+      // Recalculate and update charts
+      if (tabName === "sip") {
+        calcSIP();
+        updateSIPChart();
+      } else {
+        calcLumpsum();
+        updateLumpsumChart();
+      }
+    }
+
+    // Chart switching functions
+    function switchSIPChart(chartType) {
+      // Update button states
+      document
+        .querySelectorAll("#sip-calc .chart-toggle-btn")
+        .forEach((btn) => {
+          btn.classList.remove("active");
+        });
+      event.target.classList.add("active");
+
+      sipChartType = chartType;
+      updateSIPChart();
+    }
+
+    function switchLumpsumChart(chartType) {
+      // Update button states
+      document
+        .querySelectorAll("#lumpsum-calc .chart-toggle-btn")
+        .forEach((btn) => {
+          btn.classList.remove("active");
+        });
+      event.target.classList.add("active");
+
+      lumpsumChartType = chartType;
+      updateLumpsumChart();
+    }
+
+    // Utility function
+    function formatINR(x) {
+      return (
+        "₹" + Number(x).toLocaleString("en-IN", { maximumFractionDigits: 0 })
+      );
+    }
+
+    // SIP Calculator Elements
+    const sipAmount = document.getElementById("sip-amount");
+    const sipAmountOut = document.getElementById("sipAmountOut");
+    const sipRate = document.getElementById("sip-rate");
+    const sipRateOut = document.getElementById("sipRateOut");
+    const sipYears = document.getElementById("sip-years");
+    const sipYearsOut = document.getElementById("sipYearsOut");
+
+    // Lumpsum Calculator Elements
+    const lumpsumAmount = document.getElementById("lumpsum-amount");
+    const lumpsumAmountOut = document.getElementById("lumpsumAmountOut");
+    const lumpsumRate = document.getElementById("lumpsum-rate");
+    const lumpsumRateOut = document.getElementById("lumpsumRateOut");
+    const lumpsumYears = document.getElementById("lumpsum-years");
+    const lumpsumYearsOut = document.getElementById("lumpsumYearsOut");
+
+    // SIP Calculation
+    function calcSIP() {
+      const P = parseFloat(sipAmount.value); // monthly SIP amount
+      const annualRate = parseFloat(sipRate.value); // annual rate in %
+      const r = annualRate / 100 / 12; // monthly interest rate
+      const n = parseInt(sipYears.value) * 12; // total months
+      const totalInvestment = P * n;
+
+      const FV = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+
+      const returns = FV - totalInvestment;
+
+      document.getElementById("sip-total-investment").textContent =
+        formatINR(totalInvestment);
+      document.getElementById("sip-total-returns").textContent =
+        formatINR(returns);
+      document.getElementById("sip-total-value").textContent = formatINR(FV);
+    }
+
+    // Lumpsum Calculation
+    function calcLumpsum() {
+      const P = parseFloat(lumpsumAmount.value);
+      const r = parseFloat(lumpsumRate.value) / 100;
+      const n = parseInt(lumpsumYears.value);
+      const totalInvestment = P;
+      const FV = P * Math.pow(1 + r, n);
+      const returns = FV - totalInvestment;
+
+      document.getElementById("lumpsum-total-investment").textContent =
+        formatINR(totalInvestment);
+      document.getElementById("lumpsum-total-returns").textContent =
+        formatINR(returns);
+      document.getElementById("lumpsum-total-value").textContent =
+        formatINR(FV);
+    }
+
+    // Get SIP yearly data
+    function getSIPYearlyData() {
+      const P = parseFloat(sipAmount.value);
+      const r = parseFloat(sipRate.value) / 100 / 12;
+      const years = parseInt(sipYears.value);
+      let yearlyInvestment = [];
+      let yearlyValue = [];
+      let labels = [];
+
+      for (let y = 1; y <= years; y++) {
+        const n = y * 12;
+        const FV = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+        yearlyInvestment.push(P * n);
+        yearlyValue.push(FV);
+        labels.push(`Year ${y}`);
+      }
+      return { labels, yearlyInvestment, yearlyValue };
+    }
+
+    // Get Lumpsum yearly data
+    function getLumpsumYearlyData() {
+      const P = parseFloat(lumpsumAmount.value);
+      const r = parseFloat(lumpsumRate.value) / 100;
+      const years = parseInt(lumpsumYears.value);
+      let yearlyInvestment = [];
+      let yearlyValue = [];
+      let labels = [];
+
+      for (let y = 1; y <= years; y++) {
+        const FV = P * Math.pow(1 + r, y);
+        yearlyInvestment.push(P);
+        yearlyValue.push(FV);
+        labels.push(`Year ${y}`);
+      }
+      return { labels, yearlyInvestment, yearlyValue };
+    }
+
+    // Update SIP Chart
+    function updateSIPChart() {
+      calcSIP();
+
+      if (sipChart) {
+        sipChart.destroy();
+      }
+
+      const ctx = document.getElementById("sipChart").getContext("2d");
+
+      if (sipChartType === "doughnut") {
+        const P = parseFloat(sipAmount.value);
+        const r = parseFloat(sipRate.value) / 100 / 12;
+        const n = parseInt(sipYears.value) * 12;
+        const totalInvestment = P * n;
+        const FV = P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+        const returns = FV - totalInvestment;
+
+        sipChart = new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: ["Total Investment", "Est. Returns"],
+            datasets: [
+              {
+                data: [totalInvestment, returns],
+                backgroundColor: ["#66bb6a", "#42a5f5"],
+                borderWidth: 0,
+                cutout: "60%",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  padding: 20,
+                  usePointStyle: true,
+                },
+              },
+            },
+          },
+        });
+      } else {
+        const { labels, yearlyInvestment, yearlyValue } = getSIPYearlyData();
+
+        sipChart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: "Total Investment",
+                data: yearlyInvestment,
+                backgroundColor: "#66bb6a",
+                borderWidth: 1,
+                borderRadius: 4,
+              },
+              {
+                label: "Total Value",
+                data: yearlyValue,
+                backgroundColor: "#42a5f5",
+                borderWidth: 1,
+                borderRadius: 4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  padding: 15,
+                  usePointStyle: true,
+                },
+              },
+            },
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: "Investment Period",
+                },
+              },
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: "Amount (₹)",
+                },
+                ticks: {
+                  callback: function (value) {
+                    return formatINR(value);
+                  },
+                },
+              },
+            },
+          },
+        });
+      }
+    }
+
+    // Update Lumpsum Chart
+    function updateLumpsumChart() {
+      calcLumpsum();
+
+      if (lumpsumChart) {
+        lumpsumChart.destroy();
+      }
+
+      const ctx = document.getElementById("lumpsumChart").getContext("2d");
+
+      if (lumpsumChartType === "doughnut") {
+        const P = parseFloat(lumpsumAmount.value);
+        const r = parseFloat(lumpsumRate.value) / 100;
+        const n = parseInt(lumpsumYears.value);
+        const totalInvestment = P;
+        const FV = P * Math.pow(1 + r, n);
+        const returns = FV - totalInvestment;
+
+        lumpsumChart = new Chart(ctx, {
+          type: "doughnut",
+          data: {
+            labels: ["Total Investment", "Est. Returns"],
+            datasets: [
+              {
+                data: [totalInvestment, returns],
+                backgroundColor: ["#66bb6a", "#42a5f5"],
+                borderWidth: 0,
+                cutout: "60%",
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  padding: 20,
+                  usePointStyle: true,
+                },
+              },
+            },
+          },
+        });
+      } else {
+        const { labels, yearlyInvestment, yearlyValue } =
+          getLumpsumYearlyData();
+
+        lumpsumChart = new Chart(ctx, {
+          type: "bar",
+          data: {
+            labels: labels,
+            datasets: [
+              {
+                label: "Initial Investment",
+                data: yearlyInvestment,
+                backgroundColor: "#66bb6a",
+                borderWidth: 1,
+                borderRadius: 4,
+              },
+              {
+                label: "Total Value",
+                data: yearlyValue,
+                backgroundColor: "#42a5f5",
+                borderWidth: 1,
+                borderRadius: 4,
+              },
+            ],
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: "bottom",
+                labels: {
+                  padding: 15,
+                  usePointStyle: true,
+                },
+              },
+            },
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: "Investment Period",
+                },
+              },
+              y: {
+                beginAtZero: true,
+                title: {
+                  display: true,
+                  text: "Amount (₹)",
+                },
+                ticks: {
+                  callback: function (value) {
+                    return formatINR(value);
+                  },
+                },
+              },
+            },
+          },
+        });
+      }
+    }
+
+    // SIP Event Listeners
+    sipAmount.oninput = () => {
+      sipAmountOut.value = sipAmount.value;
+      updateSIPChart();
+    };
+    sipAmountOut.oninput = () => {
+      sipAmount.value = sipAmountOut.value;
+      updateSIPChart();
+    };
+    sipRate.oninput = () => {
+      sipRateOut.value = sipRate.value;
+      updateSIPChart();
+    };
+    sipRateOut.oninput = () => {
+      sipRate.value = sipRateOut.value;
+      updateSIPChart();
+    };
+    sipYears.oninput = () => {
+      sipYearsOut.value = sipYears.value;
+      updateSIPChart();
+    };
+    sipYearsOut.oninput = () => {
+      sipYears.value = sipYearsOut.value;
+      updateSIPChart();
+    };
+
+    // Lumpsum Event Listeners
+    lumpsumAmount.oninput = () => {
+      lumpsumAmountOut.value = lumpsumAmount.value;
+      updateLumpsumChart();
+    };
+    lumpsumAmountOut.oninput = () => {
+      lumpsumAmount.value = lumpsumAmountOut.value;
+      updateLumpsumChart();
+    };
+    lumpsumRate.oninput = () => {
+      lumpsumRateOut.value = lumpsumRate.value;
+      updateLumpsumChart();
+    };
+    lumpsumRateOut.oninput = () => {
+      lumpsumRate.value = lumpsumRateOut.value;
+      updateLumpsumChart();
+    };
+    lumpsumYears.oninput = () => {
+      lumpsumYearsOut.value = lumpsumYears.value;
+      updateLumpsumChart();
+    };
+    lumpsumYearsOut.oninput = () => {
+      lumpsumYears.value = lumpsumYearsOut.value;
+      updateLumpsumChart();
+    };
+
+    // Initialize calculations and charts
+    document.addEventListener("DOMContentLoaded", function () {
+      updateSIPChart();
+      updateLumpsumChart();
+    });
+  </script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>

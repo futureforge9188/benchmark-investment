@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Benchmark Investment</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .font-size {
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid topbar px-0 d-none d-lg-block">
+        <div class="container px-0">
+            <div class="row gx-0 align-items-center" style="height: 45px;">
+                <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                    <div class="d-flex flex-wrap">
+                        <a href="https://share.google/SbHIWO7VvFAIQz3Ul" class="text-muted me-4"><i class="fas fa-map-marker-alt text-primary me-2"></i>Find
+                            A Location</a>
+                        <a href="#" class="text-muted me-4"><i
+                                class="fas fa-phone-alt text-primary me-2"></i>+91 9974455832</a>
+                        <a href="#" class="text-muted me-0"><i
+                                class="fas fa-envelope text-primary me-2"></i>benchmarkinvestment1@gmail.com</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <a href="https://www.facebook.com/share/1BBjLkt6P2/" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i
+                                class="fab fa-facebook-f text-white"></i></a>
+                        <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i
+                                class="fab fa-twitter text-white"></i></a>
+                        <a href="https://www.instagram.com/benchmark_investment_?igsh=NWQ2MzR6Y2lybmNi" class="btn btn-primary btn-square rounded-circle nav-fill me-3"><i
+                                class="fab fa-instagram text-white"></i></a>
+                        <a href="#" class="btn btn-primary btn-square rounded-circle nav-fill me-0"><i
+                                class="fab fa-linkedin-in text-white"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid sticky-top px-0">
+        <div class="position-absolute bg-dark" style="left: 0; top: 0; width: 100%; height: 100%;">
+        </div>
+        <div class="container px-0">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3 px-4">
+                <a href="index.html" class="navbar-brand p-0 d-flex align-items-center">
+                    <img src="img/logo.png" alt="Investa Logo" class="navbar-logo" style="height:44px; width:auto; display:block;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                 <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link mt-3 mt-lg-0 mb-2 mb-lg-0 me-lg-3">Home</a>
+                        <a href="about.html" class="nav-item nav-link mb-2 mb-lg-0 me-lg-3">About Us</a>
+                        <div class="nav-item dropdown mb-2 mb-lg-0 me-lg-3">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Offerings</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="mutualfund.html" class="dropdown-item"><span class="float-start"><i
+                                            class="fas fa-angle-right"></i></span> Mutual Fund</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown mb-2 mb-lg-0 me-lg-3">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Resources</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="imageGallery.html" class="dropdown-item"><span class="float-start"><i
+                                            class="fas fa-angle-right"></i></span> Image Gallery</a>
+                                <a href="testimonial.html" class="dropdown-item"><span class="float-start"><i
+                                            class="fas fa-angle-right"></i></span> Client Testimonials</a>
+                                <a href="importantLinks.html" class="dropdown-item"><span class="float-start"><i
+                                            class="fas fa-angle-right"></i></span> Important Links</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown mb-2 mb-lg-0 active me-lg-3">
+                            <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Tools</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="MFCalc.html" class="dropdown-item"><span class="float-start"><i
+                                            class="fas fa-angle-right"></i></span> MF Calculator</a>
+                                <a href="goal-calculator.html" class="dropdown-item active"><span class="float-start"><i
+                                            class="fas fa-angle-right"></i></span> Goal Calculator</a>
+                                <a href="SWPCalc.html" class="dropdown-item"><span class="float-start"><i
+                                            class="fas fa-angle-right"></i></span> SWP Calculator</a>
+                                <a href="ReverseEMICalc.html" class="dropdown-item"><span class="float-start"><i
+                                            class="fas fa-angle-right"></i></span> Reverse EMI Calculator</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown mb-2 mb-lg-0 me-lg-3">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Login</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="https://benchmarkinvestment.madosx.co.in/pages/auth/login"
+                                    class="dropdown-item">
+                                    <span class="float-start"><i class="fas fa-angle-right"></i></span> Client Desk
+                                </a>
+                                <a href="https://benchmarkinvestment.madosx.co.in/pages/auth/login"
+                                    class="dropdown-item">
+                                    <span class="float-start"><i class="fas fa-angle-right"></i></span> Admin Desk
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center flex-nowrap pt-xl-0">
+                        <a href="contact.html"
+                            class="btn btn-primary rounded-pill text-white py-2 px-4 ms-2 flex-wrap flex-sm-shrink-0">Contact
+                            Us</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="bg-breadcrumb-single"></div>
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Goal Calculator</h4>
+            <ol class="breadcrumb justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Tools</a></li>
+                <li class="breadcrumb-item active text-primary">Goal Calculator</li>
+            </ol>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Goal Calculator Section Start -->
+    <section class="container py-5" id="goal-calc" style="max-width: 1000px;">
+        <div class="mf-calc-card rounded-4 shadow-lg p-4 p-md-5 mb-4">
+            <div class="row g-4 align-items-start">
+                <!-- Chart Column (Right Side) -->
+                <div class="col-lg-6 order-2 order-lg-2">
+                    <canvas id="goalChart" height="400"></canvas>
+                </div>
+
+                <!-- Summary Column (Left Side) -->
+                <div class="col-lg-6 order-1 order-lg-1">
+                    <h2 class="mb-4 text-primary fw-bold">
+                        <i class="fas fa-bullseye me-2"></i> Goal Calculator
+                    </h2>
+
+                    <div class="mb-3">
+                        <label for="targetWealth" class="form-label fw-semibold">Goal Amount <span
+                                        class="text-primary">(₹)</span></label>
+                        <input type="number" class="form-control" id="targetWealth" value="150000" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="returnRate" class="form-label fw-semibold">Expected Return Rate <span
+                                        class="text-primary">(Per Annum)</span></label>
+                        <input type="number" class="form-control" id="returnRate" value="8.5" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="tenure" class="form-label fw-semibold">Time Period <span
+                                        class="text-primary">(Years)</span></label>
+                        <input type="number" class="form-control" id="tenure" value="11.5" step="0.5" />
+                    </div>
+
+                    <button class="btn btn-primary w-100 mt-3" onclick="calculateGoal()">Calculate</button>
+
+                    <div id="errorMessage" class="alert alert-danger mt-3 d-none"></div>
+
+                    <!-- Results -->
+                    <div id="resultsContent" class="mt-4">
+                        <h5 class="text-secondary fw-bold mb-3">Investment Plan Summary</h5>
+                        <ul class="list-group mb-3">
+                            <li class="list-group-item d-flex text-secondary justify-content-between">
+                                <span>Goal Amount</span>
+                                <strong id="goalAmount">₹0</strong>
+                            </li>
+                            <li class="list-group-item d-flex text-secondary justify-content-between">
+                                <span>Invested Amount</span>
+                                <strong id="totalInvestment">₹0</strong>
+                            </li>
+                            <li class="list-group-item d-flex text-secondary justify-content-between">
+                                <span>Monthly SIP Amount</span>
+                                <strong id="requiredInvestment">₹0</strong>
+                            </li>
+                            <li class="list-group-item d-flex text-secondary justify-content-between bg-light">
+                                <span>Est. Returns</span>
+                                <strong id="expectedReturns">₹0</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Goal Calculator Section End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer wow fadeIn" data-wow-delay="0.2s" style="background:#132248;">
+        <div class="container py-5">
+            <div class="row gy-5 gx-4 align-items-start justify-content-between">
+                <!-- Logo & Mission -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+                    <div class="footer-item d-flex flex-column h-100">
+                        <img src="img/logo.png" alt="Benchmark Investment Logo"
+                            style="height:70px; width:140px; object-fit:contain; margin-bottom:20px;">
+                        <p class="mb-0" style="line-height:1.8;">
+                            Our mission is to deliver clear, unbiased, and customized financial solutions that help
+                            clients build wealth, improve their quality of life, and take actionable steps toward their
+                            goals.
+                        </p>
+                    </div>
+                </div>
+                <!-- Explore -->
+                <div class="col-6 col-md-6 col-lg-2 mb-4 mb-lg-0">
+                    <div class="footer-item d-flex flex-column h-100">
+                        <h4 class="text-white mb-4">Explore</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="index.html" class="footer-link"><i class="fas fa-angle-right me-2"></i>Home</a>
+                            </li>
+                            <li><a href="about.html" class="footer-link"><i class="fas fa-angle-right me-2"></i>About
+                                    Us</a></li>
+                            <li><a href="./about.html#team" class="footer-link"><i
+                                        class="fas fa-angle-right me-2"></i>Our Team</a></li>
+                            <li><a href="imageGallery.html" class="footer-link"><i
+                                        class="fas fa-angle-right me-2"></i>Image Gallery</a></li>
+                            <li><a href="testimonial.html" class="footer-link"><i
+                                        class="fas fa-angle-right me-2"></i>Testimonials</a></li>
+                            <li><a href="contact.html" class="footer-link"><i
+                                        class="fas fa-angle-right me-2"></i>Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tools -->
+                <div class="col-6 col-md-6 col-lg-2 mb-4 mb-lg-0">
+                    <div class="footer-item d-flex flex-column h-100">
+                        <h4 class="text-white mb-4">Tools</h4>
+                        <ul class="list-unstyled mb-0">
+                            <li>
+                                <a href="MFCalc.html" class="footer-link">
+                                    <i class="fas fa-angle-right me-2"></i>MF Calculator
+                                </a>
+                            </li>
+                            <li>
+                                <a href="goal-calculator.html" class="footer-link">
+                                    <i class="fas fa-angle-right me-2 align-self-start icon-custom-margin"></i>Goal Calculator
+                                </a>
+                            </li>
+                            <li>
+                                <a href="SWPCalc.html" class="footer-link">
+                                    <i class="fas fa-angle-right me-2 align-self-start icon-custom-margin"></i>SWP Calculator
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ReverseEMICalc.html" class="footer-link">
+                                    <i class="fas fa-angle-right me-2 align-self-start icon-custom-margin"></i>Reverse EMI Calculator
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Contact Info -->
+                <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-item d-flex flex-column h-100">
+                        <h4 class="text-white mb-4">Contact Info</h4>
+                        <ul class="list-unstyled mb-3">
+                            <li>
+                                <div class="footer-icon-row">
+                                    <i class="fas fa-map-marker-alt footer-icon align-self-start"></i>
+                                    <a href="https://share.google/SbHIWO7VvFAIQz3Ul" target="_blank"
+                                        class="footer-link">
+                                        1st Floor, Krishna Complex, Nr Bank of Baroda, Hirabaug Circle, Surat - 395006
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="footer-icon-row">
+                                    <i class="fas fa-envelope footer-icon"></i>
+                                    <a href="mailto:benchmarkinvestment1@gmail.com" class="footer-link">
+                                        benchmarkinvestment1@gmail.com
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="footer-icon-row">
+                                    <i class="fas fa-phone footer-icon"></i>
+                                    <a href="tel:9974455832" class="footer-link">
+                                        +91 9974455832
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="d-flex align-items-center mt-auto flex-wrap">
+                            <a class="btn btn-light btn-md-square me-2 mb-2"
+                                href="https://www.facebook.com/share/1BBjLkt6P2/" target="_blank"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-light btn-md-square me-2 mb-2" href="https://twitter.com/"
+                                target="_blank"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-light btn-md-square me-2 mb-2"
+                                href="https://www.instagram.com/benchmark_investment_?igsh=NWQ2MzR6Y2lybmNi"
+                                target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-light btn-md-square me-0 mb-2" href="https://linkedin.com/"
+                                target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- WhatsApp Floating Button Start -->
+    <div class="whatsapp-tooltip-container">
+        <a href="https://wa.me/919974455832?text=Hi%20Benchmark-Investment,%20i%20want%20to%20know%20more%20about%20you"
+            class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <span class="whatsapp-tooltip-text">Chat with us</span>
+    </div>
+    <!-- WhatsApp Floating Button End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-md-0 font-size">
+                    <span class="text-body"><a href="#" class="border-bottom text-primary"><i
+                                class="fas fa-copyright text-light me-2"></i>2025 Benchmark Investment</a>, All right
+                        reserved.</span>
+                </div>
+                <div class="col-md-6 text-center text-md-end text-body font-size">
+                    <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                    <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                    <!--/*** you can purchase the Credit Removal License from "https://sudarshansoft.com//credit-removal". ***/-->
+                    Designed By <a class="border-bottom text-primary" href="https://sudarshansoft.com/">SudarshanSoft Solutions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Chart Container -->
+    <div id="chartContainer" class="d-none">
+        <canvas id="goalChart" style="width: 100%; height: 400px;"></canvas>
+    </div>
+
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        let chart;
+
+        function calculateGoal() {
+            document.getElementById('errorMessage').style.display = 'none';
+
+            const frequency = 'monthly'; // Fixed as monthly SIP, you can make it dynamic if needed
+            const targetWealth = parseFloat(document.getElementById('targetWealth').value) || 0;
+            const annualRate = parseFloat(document.getElementById('returnRate').value) || 0;
+            const tenure = parseFloat(document.getElementById('tenure').value) || 0;
+            const inflationRate = 6;
+
+            if (targetWealth <= 0 || annualRate <= 0 || tenure <= 0) {
+                showError('Please enter valid positive values for all fields.');
+                return;
+            }
+
+            if (tenure > 50) {
+                showError('Maximum tenure allowed is 50 years.');
+                return;
+            }
+
+            try {
+                const inflationAdjustedTarget = targetWealth * Math.pow(1 + inflationRate / 100, tenure);
+
+                let requiredInvestment, totalInvestment;
+                const monthlyRate = annualRate / 12 / 100;
+                const totalPeriods = tenure * 12;
+
+                if (monthlyRate > 0) {
+                    requiredInvestment = targetWealth / (((Math.pow(1 + monthlyRate, totalPeriods) - 1) / monthlyRate) * (1 + monthlyRate));
+                } else {
+                    requiredInvestment = targetWealth / totalPeriods;
+                }
+
+                totalInvestment = requiredInvestment * totalPeriods;
+
+                const expectedReturns = targetWealth - totalInvestment;
+                const realInvestmentNeeded = inflationAdjustedTarget / (((Math.pow(1 + monthlyRate, totalPeriods) - 1) / monthlyRate) * (1 + monthlyRate));
+                const purchasingPower = targetWealth / Math.pow(1 + inflationRate / 100, tenure);
+                const investmentMultiple = targetWealth / totalInvestment;
+                const wealthGrowth = ((targetWealth - totalInvestment) / totalInvestment) * 100;
+                const realReturns = annualRate - inflationRate;
+
+                updateResults({
+                    requiredInvestment,
+                    totalInvestment,
+                    expectedReturns,
+                    inflationAdjustedTarget,
+                    realInvestmentNeeded,
+                    purchasingPower,
+                    investmentMultiple,
+                    wealthGrowth,
+                    realReturns,
+                    frequency,
+                    targetWealth,
+                    annualRate,
+                    tenure
+                });
+
+                // Show results
+                document.getElementById('resultsContent').style.display = 'block';
+                document.getElementById('chartContainer').style.display = 'block';
+
+            } catch (error) {
+                showError('An error occurred during calculation.');
+                console.error(error);
+            }
+        }
+
+        function updateResults(data) {
+            document.getElementById('goalAmount').textContent = formatCurrency(data.targetWealth);
+            document.getElementById('requiredInvestment').textContent = formatCurrency(data.requiredInvestment);
+            document.getElementById('totalInvestment').textContent = formatCurrency(data.totalInvestment);
+            document.getElementById('expectedReturns').textContent = formatCurrency(data.expectedReturns);
+            updateChart(data);
+        }
+
+        function updateChart(data) {
+            const labels = [];
+            const investmentData = [];
+            const wealthData = [];
+
+            const monthlyRate = data.annualRate / 12 / 100;
+
+            for (let year = 1; year <= data.tenure; year++) {
+                labels.push(`${year} Year`);
+
+                const periods = year * 12;
+                const invested = data.requiredInvestment * periods;
+
+                let accumulated;
+                if (monthlyRate > 0) {
+                    accumulated = data.requiredInvestment * (((Math.pow(1 + monthlyRate, periods) - 1) / monthlyRate) * (1 + monthlyRate));
+                } else {
+                    accumulated = invested;
+                }
+
+                investmentData.push(invested);
+                wealthData.push(accumulated);
+            }
+
+            if (chart) {
+                chart.destroy();
+            }
+
+            const ctx = document.getElementById('goalChart').getContext('2d');
+            chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Monthly SIP Amount',
+                        data: investmentData,
+                        backgroundColor: "#66bb6a"
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            ticks: {
+                                callback: function (value) {
+                                    return '₹' + (value / 1000).toFixed(0) + 'K';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function formatCurrency(amount) {
+            return new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+
+        function showError(msg) {
+            const errorDiv = document.getElementById('errorMessage');
+            errorDiv.textContent = msg;
+            errorDiv.classList.remove('d-none');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            calculateGoal();
+        });
+    </script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

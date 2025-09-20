@@ -1,0 +1,9 @@
+  =>  Template Name    : Benchmark Investment
+
+  =>  Template Link    : https://sudarshansoft.com//investment-website-template
+
+  =>  Template License : https://sudarshansoft.com//license (or read the LICENSE.txt file)
+
+  =>  Template Author  : SudarshanSoft Solutions
+
+  =>  Author Website   : https://sudarshansoft.com/
